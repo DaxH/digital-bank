@@ -73,6 +73,7 @@ const InitialConfigaration = () => {
             console.log('Ocurrio un error')
         }
     }
+    console.log(dataIFI)
     const renderSwitch = (value) => {
         switch (value) {
             case 0:
