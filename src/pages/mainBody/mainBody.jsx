@@ -88,8 +88,7 @@ export const MainBody = () => {
                   sx={{ color: colors.dark.main }}
                   textAlign={"center"}
                 >
-                  El mas completo grupo de canales bancarios que toda entidad
-                  financiera necesita tener.
+                  A través de nuestros canales electrónicos o las  de tu proveedor de confianza, nos integramos a tu core financiero mediante un moderno midelware para brindarte la mejor experiencia en canales para atención al cliente.
                 </Typography>
               </Grid>
             </Grid>

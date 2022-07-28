@@ -22,12 +22,12 @@ export const BarMenu = () => {
 		{
 			label: 'Posición consolidada',
 			child: [],
-			icon: <MonetizationOnIcon color={'templatePrimary'} />,
+			icon: <MonetizationOnIcon color={'templateSecondary'} />,
 			link: '/PosicionConsolidada'
 		},
 		{
 			label: 'Transferencias',
-			icon: <CompareArrowsIcon color={'templatePrimary'} />,
+			icon: <CompareArrowsIcon color={'templateSecondary'} />,
 			child: [
 				{ label: 'Internas' },
 				{ label: 'Externas' },
@@ -37,19 +37,19 @@ export const BarMenu = () => {
 		{
 			label: 'Pago de servicios',
 			child: [],
-			icon: <ReceiptIcon color={'templatePrimary'} />,
+			icon: <ReceiptIcon color={'templateSecondary'} />,
 			link: '#'
 		},
 		{
 			label: 'Pago de tarjetas',
 			child: [],
-			icon: <PaymentIcon color={'templatePrimary'} />,
+			icon: <PaymentIcon color={'templateSecondary'} />,
 			link: '#'
 		},
 		{
 			label: 'Solicitudes',
 			child: [],
-			icon: <ListAltIcon color={'templatePrimary'} />,
+			icon: <ListAltIcon color={'templateSecondary'} />,
 			link: '#'
 		},
 	]
@@ -61,12 +61,12 @@ export const BarMenu = () => {
 						{
 							data.length > 0
 							&&
-							<img src={data[0].results[0].logo_horizontal} alt={'logo'} width={'35%'} />
+							<img src={data[0].results[0].logo_horizontal} alt={'logo'} width={'100px'} />
 						}
 						<Typography variant="h2" color='templatePrimary.main'></Typography>
 					</Grid>
 					<Grid item xs={2}>
-						<Grid container columnSpacing={2} justifyContent={'space-between'} alignItems={'center'} border={2} borderRadius={10}>
+						<Grid container columnSpacing={2} justifyContent={'space-between'} alignItems={'center'} border={2} borderRadius={10} borderColor={'templatePrimary.main'}>
 							<Grid item>
 								<Avatar src='/assets/images/avatar.jpg' />
 							</Grid>
@@ -88,7 +88,7 @@ export const BarMenu = () => {
 				</Grid>
 			</Toolbar>
 			<Toolbar style={{ padding: 0 }} >
-				<Grid container justifyContent='space-between' padding={'0 8%'}>
+				<Grid container justifyContent='space-between' padding={'0 20%'}>
 					{
 						menuItems.map((menuItem, index) => (
 							<Grid item justifyContent='center' columnSpacing={2} key={index}>
