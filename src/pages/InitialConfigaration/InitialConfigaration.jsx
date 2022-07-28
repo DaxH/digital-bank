@@ -45,6 +45,7 @@ const InitialConfigaration = () => {
             navigate('/')
         }
     }
+    
     const updateEntity = async () => {
         const additionalData = {
             titulo_pagina: dataIFI && dataIFI.data.titlePage,
@@ -56,8 +57,8 @@ const InitialConfigaration = () => {
             copyright: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.copyrightInput,
             contacto: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.contactInput,
             lema: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.statementInput,
-            facebook: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.facebookInput,
-            twitter: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.twitterInput,
+            facebook: 'https://www.facebook.com/',
+            twitter: 'https://twitter.com/',
             plantilla: 0,
             id_entidad: 1,
         }
