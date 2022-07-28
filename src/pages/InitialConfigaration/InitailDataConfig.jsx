@@ -28,7 +28,7 @@ const InitailDataConfig = ({ sendDataFunction }) => {
     const handleChangeInput = () => {
         var nameIFI = $('#nameIFI').val() && $('#nameIFI').val()
         var titlePage = $('#titlePage').val() && $('#titlePage').val()
-        if (titlePage.length > 0 && nameIFI.length > 0 && verticalLogo && horizontalLogo && primaryColor && secondaryColor) {
+        if (titlePage.length > 0 && nameIFI.length > 0 && primaryColor && secondaryColor) {
             setIsValidValue(true)
         } else {
             setIsValidValue(false)

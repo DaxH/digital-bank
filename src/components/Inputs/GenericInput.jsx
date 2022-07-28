@@ -7,7 +7,7 @@ import IconState from '../Icons/Icons'
 
 export const InputLabelStyled = styled(InputLabel)(({ theme }) => ({
     fontSize: '19px !important',
-    color: theme.palette.templatePrimary.main,
+    color: theme.palette.primary.main,
     margin: '0%'
 }));
 

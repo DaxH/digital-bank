@@ -45,7 +45,7 @@ const InitialConfigaration = () => {
             navigate('/')
         }
     }
-    
+
     const updateEntity = async () => {
         const additionalData = {
             titulo_pagina: dataIFI && dataIFI.data.titlePage,
@@ -73,7 +73,6 @@ const InitialConfigaration = () => {
             console.log('Ocurrio un error')
         }
     }
-    console.log(dataIFI)
     const renderSwitch = (value) => {
         switch (value) {
             case 0:
