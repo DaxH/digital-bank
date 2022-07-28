@@ -15,7 +15,6 @@ import DragAndDropFiles from '../../components/Inputs/DragAndDropFiles';
 const InitailDataConfig = ({ sendDataFunction }) => {
     const stateColor = useSelector((state) => state.color)
     const { data: colors } = stateColor
-    console.log(colors)
     const { forceStringNumber } = helpFunctions()
     const navigate = useNavigate()
     const [isValidValue, setIsValidValue] = useState(false)
