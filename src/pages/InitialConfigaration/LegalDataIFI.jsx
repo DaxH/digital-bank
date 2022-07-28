@@ -24,7 +24,7 @@ const LegalDataIFI = ({ sendDataFunction }) => {
     const inputMax = 1000
 
     const handleChangeInput = () => {
-        var copyright = $('#copyrightInput').val() ? $('#contactInput').val() : ''
+        var copyright = $('#copyrightInput').val() ? $('#copyrightInput').val() : ''
         var contactInput = $('#contactInput').val() ? $('#contactInput').val() : ''
         var statementInput = $('#statementInput').val() ? $('#statementInput').val() : ''
         var facebookInput = $('#facebookInput').val() ? $('#facebookInput').val() : ''

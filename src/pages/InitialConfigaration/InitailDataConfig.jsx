@@ -15,8 +15,8 @@ const InitailDataConfig = ({ sendDataFunction }) => {
     const { forceStringNumber } = helpFunctions()
     const navigate = useNavigate()
     const [isValidValue, setIsValidValue] = useState(false)
-    const [primaryColor, setPrimaryColor] = useState(createColor("red"));
-    const [secondaryColor, setSecondaryColor] = useState(createColor("blue"));
+    const [primaryColor, setPrimaryColor] = useState(createColor("#14780a"));
+    const [secondaryColor, setSecondaryColor] = useState(("#4A9D24"));
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const stateColor = useSelector((state) => state.color)
     const { data: colors } = stateColor
@@ -24,12 +24,13 @@ const InitailDataConfig = ({ sendDataFunction }) => {
     const namesMax = 50
     const pathMin = 5
     const pathMax = 500
+
     const handleChangeInput = () => {
-        var titlePage = $('#titlePage').val() ? $('#titlePage').val() : ''
-        var nameIFI = $('#nameIFI').val() ? $('#nameIFI').val() : ''
-        var verticalLogo = $('#verticalLogo').val() ? $('#verticalLogo').val() : ''
-        var horizontalLogo = $('#horizontalLogo').val() ? $('#horizontalLogo').val() : ''
-        if (titlePage.length > 0 && nameIFI.length > 0 && verticalLogo.length > 0 && horizontalLogo.length > 0 && primaryColor.hex.length === 6 && secondaryColor.hex.length === 6) {
+        var nameIFI = $('#nameIFI').val() && $('#nameIFI').val()
+        var verticalLogo = $('#verticalLogo').val() && $('#verticalLogo').val()
+        var horizontalLogo = $('#horizontalLogo').val() && $('#horizontalLogo').val()
+        var titlePage = $('#titlePage').val() && $('#titlePage').val()
+        if (titlePage.length > 0 && nameIFI.length > 0 && verticalLogo.length > 0 && horizontalLogo.length > 0 && primaryColor && secondaryColor) {
             setIsValidValue(true)
         } else {
             setIsValidValue(false)
@@ -70,7 +71,6 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                     onSubmit={
                         handleSubmit(data => {
                             sendDataFunction({ data, primaryColor: primaryColor.hex, secondaryColor: secondaryColor.hex }, isValidValue)
-
                         })
                     }>
                     <Grid container direction='row' columnSpacing={3} justifyContent='center' alignContent='center' paddingTop={{ xs: '2%', md: '3%' }} paddingBottom={{ xs: '2%', md: '5%' }}>
@@ -200,14 +200,14 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
                                     <Grid item xs={8} md={10}>
                                         <Typography color={'primary'}>Color primario </Typography>
-                                        <ColorPicker value={primaryColor} onChange={primaryChangeColor} />
+                                        <ColorPicker value={primaryColor} onChange={primaryChangeColor} hideTextfield />
                                     </Grid>
 
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
                                     <Grid item xs={10} md={12} >
                                         <Typography color={'primary'}>Color secundario</Typography>
-                                        <ColorPicker value={secondaryColor} onChange={secondaryChangeColor} />
+                                        <ColorPicker value={secondaryColor} onChange={secondaryChangeColor} hideTextfield />
                                     </Grid>
                                 </Grid>
                             </Grid>
