@@ -74,7 +74,7 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                     id='form-dataIFI'
                     onSubmit={
                         handleSubmit(data => {
-                            sendDataFunction({ data, primaryColor: primaryColor.hex, secondaryColor: secondaryColor.hex }, isValidValue)
+                            sendDataFunction({ data, primaryColor: primaryColor.hex, secondaryColor: secondaryColor.hex, verticalLogo: verticalLogo, horizontalLogo: horizontalLogo }, isValidValue)
                         })
                     }>
                     <Grid container direction='row' columnSpacing={3} justifyContent='center' alignContent='center' paddingTop={{ xs: '2%', md: '3%' }} paddingBottom={{ xs: '2%', md: '5%' }}>
