@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import LegalDataIFI from './LegalDataIFI';
 import GenericBaseLayout from '../../components/GenericBaseLayout';
 import { helpFunctions } from '../../helpers/helpFunctions';
+import SelectServices from '../services/SelectServices';
 
 const InitialConfigaration = () => {
     const navigate = useNavigate()
@@ -25,7 +26,7 @@ const InitialConfigaration = () => {
     const { activeStep, handleNext, handleSkip, isStepOptional, returnFirstItem } = useStepper(1);
     const steps = ['Datos Institucionales', 'Legal y comunicación', 'Falta poco',]
 
-    const initialDataEntity = async (dataInitialDataEntity, state) => {
+    const initialDataEntity = (dataInitialDataEntity, state) => {
         setDataIFI(dataInitialDataEntity && dataInitialDataEntity)
         if (state) {
             handleNext()
@@ -38,7 +39,7 @@ const InitialConfigaration = () => {
     const legalDataEntity = async (dataLegalDataEntity, state) => {
         setDataIFI({ ...dataIFI, dataLegalDataEntity })
         if (state) {
-            updateEntity()
+            await updateEntity()
         } else {
             alert('ocurrio un error')
             navigate('/')
@@ -48,15 +49,15 @@ const InitialConfigaration = () => {
         const additionalData = {
             titulo_pagina: dataIFI && dataIFI.data.titlePage,
             nombre: dataIFI && dataIFI.data.nameIFI,
-            logo_horizontal: dataIFI && dataIFI.data.horizontalLogo,
-            logo_vertical: dataIFI && dataIFI.data.verticalLogo,
-            color_primario: dataIFI && dataIFI.primaryColor,
-            color_secundario: dataIFI && dataIFI.secondaryColor,
-            copyright: dataIFI && dataIFI.dataLegalDataEntity.copyrightInput,
-            contacto: dataIFI && dataIFI.dataLegalDataEntity.contactInput,
-            lema: dataIFI && dataIFI.dataLegalDataEntity.statementInput,
-            facebook: dataIFI && dataIFI.dataLegalDataEntity.facebookInput,
-            twitter: dataIFI && dataIFI.dataLegalDataEntity.twitterInput,
+            logo_horizontal: 'https://www.fintech.kradac.com:3006/storage/uploads/fintech/digi_h.png',
+            logo_vertical: 'https://www.fintech.kradac.com:3006/storage/uploads/fintech/digi_h.png',
+            color_primario: dataIFI && `#${dataIFI.primaryColor}`,
+            color_secundario: dataIFI && `#${dataIFI.secondaryColor}`,
+            copyright: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.copyrightInput,
+            contacto: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.contactInput,
+            lema: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.statementInput,
+            facebook: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.facebookInput,
+            twitter: dataIFI.dataLegalDataEntity && dataIFI.dataLegalDataEntity.twitterInput,
             plantilla: 0,
             id_entidad: 1,
         }
@@ -71,7 +72,7 @@ const InitialConfigaration = () => {
             console.log('Ocurrio un error')
         }
     }
-
+    console.log(dataIFI)
     const renderSwitch = (value) => {
         switch (value) {
             case 0:
@@ -84,15 +85,11 @@ const InitialConfigaration = () => {
                 )
             case 2:
                 return (
-
                     processComplete ?
-                        console.log('Succes')
-                        //Componente Wilson
+                        <SelectServices />
                         :
                         console.log('Error')
                 )
-
-
             default:
                 break;
         }
