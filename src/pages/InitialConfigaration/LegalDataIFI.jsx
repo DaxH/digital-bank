@@ -27,9 +27,7 @@ const LegalDataIFI = ({ sendDataFunction }) => {
         var copyright = $('#copyrightInput').val() ? $('#copyrightInput').val() : ''
         var contactInput = $('#contactInput').val() ? $('#contactInput').val() : ''
         var statementInput = $('#statementInput').val() ? $('#statementInput').val() : ''
-        var facebookInput = $('#facebookInput').val() ? $('#facebookInput').val() : ''
-        var twitterInput = $('#twitterInput').val() ? $('#twitterInput').val() : ''
-        if (copyright.length > 0 && contactInput.length > 0 && statementInput.length > 0 && facebookInput.length > 0 && twitterInput.length > 0) {
+        if (copyright.length > 0 && contactInput.length > 0 && statementInput.length > 0) {
             setIsValidValue(true)
         } else {
             setIsValidValue(false)
@@ -145,68 +143,6 @@ const LegalDataIFI = ({ sendDataFunction }) => {
                                     // forceData={forceStringNumber}
                                     onKeyUp={handleChangeInput}
                                     placeHolder={'Lema de la entidad financiera.'}
-                                />
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Grid container paddingLeft={'3vw'} direction='column' rowSpacing={3}>
-                            <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
-                                <GenericInput
-                                    id={'facebookInput'}
-                                    name={'facebookInput'}
-                                    typeValue={'text'}
-                                    title={'Facebook'}
-                                    register={register}
-                                    validation={{
-                                        required: true,
-                                        maxLength: inputMax,
-                                        minLength: inputMin,
-                                        // pattern: /[^A-Za-zá-üÁ-Ü\s]/g,
-                                    }}
-                                    errorMessage={{
-                                        required: 'Este campo es requerido',
-                                        maxLength: `Número de caracteres permitidos ${inputMax}`,
-                                        minLength: `Número mínimo de caracteres ${inputMin}`,
-                                        pattern: 'Ingrese solo caracteres numéricos',
-                                    }}
-                                    inputProps={{
-                                        maxLength: inputMax,
-                                        minLength: inputMin,
-                                    }}
-                                    error={errors}
-                                    // forceData={forceStringNumber}
-                                    onKeyUp={handleChangeInput}
-                                    placeHolder={'Url de la cuenta de facebook.'}
-                                />
-                            </Grid>
-                            <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
-                                <GenericInput
-                                    id={'twitterInput'}
-                                    name={'twitterInput'}
-                                    typeValue={'text'}
-                                    title={'Twitter'}
-                                    register={register}
-                                    validation={{
-                                        required: true,
-                                        maxLength: inputMax,
-                                        minLength: inputMin,
-                                        // pattern: /[^A-Za-zá-üÁ-Ü\s]/g,
-                                    }}
-                                    errorMessage={{
-                                        required: 'Este campo es requerido',
-                                        maxLength: `Número de caracteres permitidos ${inputMax}`,
-                                        minLength: `Número mínimo de caracteres ${inputMin}`,
-                                        pattern: 'Ingrese solo caracteres numéricos',
-                                    }}
-                                    inputProps={{
-                                        maxLength: inputMax,
-                                        minLength: inputMin,
-                                    }}
-                                    error={errors}
-                                    // forceData={forceStringNumber}
-                                    onKeyUp={handleChangeInput}
-                                    placeHolder={'Url de la cuenta de twitter.'}
                                 />
                             </Grid>
                         </Grid>

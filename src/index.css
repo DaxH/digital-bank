@@ -66,4 +66,13 @@ code {
 
 .item svg {
 	color: #4A9D24;
+	width: auto;
+}
+.Drag-and-grop label {
+  border-color: #4A9D24 !important;
+  max-width: none !important;
+}
+.Drag-and-grop labeL svg path {
+fill: #4A9D24;
+
 }

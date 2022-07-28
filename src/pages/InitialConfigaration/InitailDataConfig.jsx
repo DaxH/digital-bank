@@ -10,27 +10,25 @@ import { useNavigate } from 'react-router-dom'
 import { Color, ColorPicker, createColor } from "material-ui-color";
 import $ from 'jquery';
 import PropTypes from 'prop-types'
+import DragAndDropFiles from '../../components/Inputs/DragAndDropFiles';
 
 const InitailDataConfig = ({ sendDataFunction }) => {
+    const stateColor = useSelector((state) => state.color)
+    const { data: colors } = stateColor
     const { forceStringNumber } = helpFunctions()
     const navigate = useNavigate()
     const [isValidValue, setIsValidValue] = useState(false)
     const [primaryColor, setPrimaryColor] = useState(createColor("#14780a"));
-    const [secondaryColor, setSecondaryColor] = useState(("#4A9D24"));
+    const [secondaryColor, setSecondaryColor] = useState(createColor("#4A9D24"));
+    const [verticalLogo, setVerticalLogo] = useState(null)
+    const [horizontalLogo, setHorizontalLogo] = useState(null)
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const stateColor = useSelector((state) => state.color)
-    const { data: colors } = stateColor
     const namesMin = 1
     const namesMax = 50
-    const pathMin = 5
-    const pathMax = 500
-
     const handleChangeInput = () => {
         var nameIFI = $('#nameIFI').val() && $('#nameIFI').val()
-        var verticalLogo = $('#verticalLogo').val() && $('#verticalLogo').val()
-        var horizontalLogo = $('#horizontalLogo').val() && $('#horizontalLogo').val()
         var titlePage = $('#titlePage').val() && $('#titlePage').val()
-        if (titlePage.length > 0 && nameIFI.length > 0 && verticalLogo.length > 0 && horizontalLogo.length > 0 && primaryColor && secondaryColor) {
+        if (titlePage.length > 0 && nameIFI.length > 0 && primaryColor && secondaryColor) {
             setIsValidValue(true)
         } else {
             setIsValidValue(false)
@@ -49,6 +47,12 @@ const InitailDataConfig = ({ sendDataFunction }) => {
         return () => {
         }
     }, [secondaryColor, primaryColor])
+    const handleChangeHL = (file) => {
+        setHorizontalLogo(file);
+    };
+    const handleChangeVL = (file) => {
+        setVerticalLogo(file);
+    };
     return (
         <>
             <Typography color={'primary'} fontSize={'20px'}>Configura tus datos e iniciemos</Typography>
@@ -107,62 +111,12 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                                     />
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
-                                    <GenericInput
-                                        id={'verticalLogo'}
-                                        name={'verticalLogo'}
-                                        typeValue={'text'}
-                                        title={'Logo vertical:'}
-                                        register={register}
-                                        validation={{
-                                            required: true,
-                                            maxLength: pathMax,
-                                            minLength: pathMin,
-                                            // pattern: /[^A-Za-zá-üÁ-Ü\s]/g,
-                                        }}
-                                        errorMessage={{
-                                            required: 'Este campo es requerido',
-                                            maxLength: `Número de caracteres permitidos ${pathMax}`,
-                                            minLength: `Número mínimo de caracteres ${pathMin}`,
-                                            pattern: 'Ingrese solo caracteres numéricos',
-                                        }}
-                                        inputProps={{
-                                            maxLength: pathMax,
-                                            minLength: pathMin,
-                                        }}
-                                        error={errors}
-                                        // forceData={forceStringNumber}
-                                        onKeyUp={handleChangeInput}
-                                        placeHolder={'Path (dirección) del logo de la entidad.'}
-                                    />
+                                    <Typography color='primary'>Logo vertical</Typography>
+                                    <DragAndDropFiles handleChange={handleChangeVL} file={verticalLogo} />
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
-                                    <GenericInput
-                                        id={'horizontalLogo'}
-                                        name={'horizontalLogo'}
-                                        typeValue={'text'}
-                                        title={'Logo horizontal:'}
-                                        register={register}
-                                        validation={{
-                                            required: true,
-                                            maxLength: pathMax,
-                                            minLength: pathMin,
-                                            // pattern: /[^A-Za-zá-üÁ-Ü\s]/g,
-                                        }}
-                                        errorMessage={{
-                                            required: 'Este campo es requerido',
-                                            maxLength: `Número de caracteres permitidos ${pathMax}`,
-                                            minLength: `Número mínimo de caracteres ${pathMin}`,
-                                            pattern: 'Ingrese solo caracteres numéricos',
-                                        }}
-                                        inputProps={{
-                                            maxLength: pathMax,
-                                            minLength: pathMin,
-                                        }}
-                                        error={errors}
-                                        // forceData={forceStringNumber}
-                                        onKeyUp={handleChangeInput}
-                                        placeHolder={'Path (dirección) relativo del logo de la entidad.'}
-                                    />
+                                    <Typography color='primary'>Logo horizontal</Typography>
+                                    <DragAndDropFiles handleChange={handleChangeHL} file={horizontalLogo} />
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
                                     <GenericInput
