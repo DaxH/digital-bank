@@ -123,21 +123,25 @@ export const Login = () => {
 
 						}}>
 						<Grid item margin={'auto'}>
-							<Grid container columnSpacing={2} justifyContent={'center'} alignItems={'center'}>
-								<Grid item xs={5}>
-									<Typography variant='d1' color='white.main'>Bienvenido a</Typography>
-								</Grid>
-								<Grid item xs={4}>
-									{
-										data.length > 0
-										&&
-										<img src={data[0].results[0].logo_vertical} alt={'logo'} width={'50%'} />
-									}
+							<Grid container>
+								<Grid item>
+									<Grid container columnSpacing={2} justifyContent={'center'} alignItems={'center'}>
+										<Grid item>
+											<Typography variant='d1' color='white.main'>Bienvenido a</Typography>
+										</Grid>
+										<Grid item xs={4}>
+											{
+												data.length > 0
+												&&
+												<img src={data[0].results[0].logo_vertical} alt={'logo'} width={'50%'} />
+											}
 
+										</Grid>
+									</Grid>
 								</Grid>
-							</Grid>
-							<Grid item>
-								<Typography variant='body1' color='white.main'>Inicia sesión para acceder a tu cuenta</Typography>
+								{/* <Grid item> */}
+								<Typography variant='body1' color='white.main' marginLeft={'15%'}>Inicia sesión para acceder a tu cuenta</Typography>
+								{/* </Grid> */}
 							</Grid>
 						</Grid>
 					</MDBox>
