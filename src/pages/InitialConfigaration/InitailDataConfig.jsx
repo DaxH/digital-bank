@@ -13,21 +13,19 @@ import PropTypes from 'prop-types'
 import DragAndDropFiles from '../../components/Inputs/DragAndDropFiles';
 
 const InitailDataConfig = ({ sendDataFunction }) => {
+    const stateColor = useSelector((state) => state.color)
+    const { data: colors } = stateColor
+    console.log(colors)
     const { forceStringNumber } = helpFunctions()
     const navigate = useNavigate()
     const [isValidValue, setIsValidValue] = useState(false)
     const [primaryColor, setPrimaryColor] = useState(createColor("#14780a"));
-    const [secondaryColor, setSecondaryColor] = useState(("#4A9D24"));
+    const [secondaryColor, setSecondaryColor] = useState(createColor("#4A9D24"));
     const [verticalLogo, setVerticalLogo] = useState(null)
     const [horizontalLogo, setHorizontalLogo] = useState(null)
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const stateColor = useSelector((state) => state.color)
-    const { data: colors } = stateColor
     const namesMin = 1
     const namesMax = 50
-    const pathMin = 5
-    const pathMax = 500
-    console.log(verticalLogo, horizontalLogo)
     const handleChangeInput = () => {
         var nameIFI = $('#nameIFI').val() && $('#nameIFI').val()
         var titlePage = $('#titlePage').val() && $('#titlePage').val()
@@ -114,11 +112,11 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                                     />
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
-                                    <Typography>Logo vertical</Typography>
+                                    <Typography color='primary'>Logo vertical</Typography>
                                     <DragAndDropFiles handleChange={handleChangeVL} file={verticalLogo} />
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
-                                    <Typography>Logo horizontal</Typography>
+                                    <Typography color='primary'>Logo horizontal</Typography>
                                     <DragAndDropFiles handleChange={handleChangeHL} file={horizontalLogo} />
                                 </Grid>
                                 <Grid item xs={10} md={6} width={{ xs: '80%', xl: '90%' }} alignSelf='center'>
@@ -174,7 +172,7 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                         <Grid item xs={8} md={4}>
                             <MDButton
                                 variant='contained'
-                                color='secondary'
+                                color='templatePrimary'
                                 size='small'
                                 form='form-dataIFI'
                                 type='submit'
@@ -189,7 +187,7 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                         <Grid item xs={8} md={4}>
                             <MDButton
                                 variant='outlined'
-                                color='secondary'
+                                color='templatePrimary'
                                 size='small'
                                 fontWeight={'bold'}
                                 fontSize={'20px'}

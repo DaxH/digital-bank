@@ -12,7 +12,10 @@ const Stepper = ({ links, activeStep, steps, renderSwitch, label, page, function
     const { size } = typography
     return (
         <MDBox width='100%' height='100%' bgColor='transparent'>
+			{/* <Grid item> */}
+			{/* </Grid> */}
             <Grid container direction="column" spacing={1} display='flex'>
+			<img src='/assets/images/stike-logotipo.png'  width='270px' height='100px' style={{ margin:'auto' }}/>
                 {/* <Grid item>
                     <SearchBar links={links} />
                 </Grid> */}

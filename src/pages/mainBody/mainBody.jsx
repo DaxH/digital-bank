@@ -229,7 +229,7 @@ export const MainBody = () => {
               Te presentamos{" "}
               <span
                 dangerouslySetInnerHTML={{
-                  __html: `<label style='font-family:DarkerGrotesque-Extrabold; color:${colors.dark.main}'>variedad de plantillas</label>`,
+                  __html: `<label style='font-family:DarkerGrotesque-Extrabold; color:${colors.dark.main}'>variedad de temas</label>`,
                 }}
               />{" "}
               que se{" "}
@@ -276,7 +276,7 @@ export const MainBody = () => {
                   backgroundColor: colors.green.main,
                 }}
               >
-                Ver plantillas
+                Ver temas
               </Button>
             </Grid>
           </Grid>

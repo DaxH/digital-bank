@@ -45,6 +45,7 @@ const InitialConfigaration = () => {
             navigate('/')
         }
     }
+    
     const updateEntity = async () => {
         const additionalData = {
             titulo_pagina: dataIFI && dataIFI.data.titlePage,

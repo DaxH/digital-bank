@@ -55,12 +55,21 @@ code {
 .background {
 	background-image: url(../public/assets/images/waves1.svg) !important;
 }
+
 .backgroundAbs {
 	background-image: url(../public/assets/images/waves1.svg) !important;
 	background-size: contain !important;
-
+	background-repeat: no-repeat !important;
+	background-position: center !important;
 
 }
+
 .item svg {
 	color: #4A9D24;
+}
+.Drag-and-grop label {
+  border-color: #4A9D24 !important;
+}
+.Drag-and-grop labeL svg path {
+fill: #4A9D24;
 }

@@ -4,10 +4,10 @@ import { MUITable } from '../MUITable'
 
 export const Accounts = () => {
 	const rows = [
-		['401 XXX XXX 221', 'SIMUR DIERA', '$200.00', '$200.00', 'Ver detalles >'],
-		['411 XXX XXX 333', 'SIMUR DIERA', '$200.00', '$200.00', 'Ver detalles >'],
-		['200 XXX XXX 432', 'SIMUR DIERA', '$200.00', '$200.00', 'Ver detalles >'],
-		// ['787 XXX XXX 122', 'SIMUR DIERA', '$200.00', '$200.00', 'Ver detalles >'],
+		['401 XXX XXX 221', 'LUIS GARCIA', '$200.00', '$200.00', 'Ver detalles >'],
+		['411 XXX XXX 333', 'LUIS GARCIA', '$200.00', '$200.00', 'Ver detalles >'],
+		['200 XXX XXX 432', 'LUIS GARCIA', '$200.00', '$200.00', 'Ver detalles >'],
+		// ['787 XXX XXX 122', 'LUIS GARCIA', '$200.00', '$200.00', 'Ver detalles >'],
 	]
 	const columns = [
 		{
