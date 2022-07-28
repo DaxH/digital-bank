@@ -1,11 +1,11 @@
-import { Button, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import React from 'react'
 import { useStyles } from '../CustomStyles/cardStyles/CardStyles'
 import MDBox from '../MDBox'
+import MDButton from '../MDButton'
 
 export const Card = ({ id, nameTheme, colors = { primary: '#89f7fe', secondary: '#66a6ff' }, actionButton, imgMain }) => {
 	const classes = useStyles()
-
 	return (
 		<MDBox
 			shadow='md'
@@ -20,9 +20,20 @@ export const Card = ({ id, nameTheme, colors = { primary: '#89f7fe', secondary: 
 			<Typography color={'white.main'} variant='h4'>{nameTheme}</Typography>
 			<img className={'imgMain'} src={imgMain} />
 			<Grid item className='button-right' alignSelf={'end'} marginLeft={'auto'}>
-				<Button variant='contained' onClick={() => { actionButton() }} sx={{ background: `linear-gradient(90deg, ${colors.primary} 0%, ${colors.secondary} 100%);` }}>
+				<MDButton
+					variant='contained'
+					color='primary'
+					size='small'
+					fontWeight={'bold'}
+					fontSize={'20px'}
+					circular={true}
+					fullWidth
+					onClick={() => { actionButton() }}>
 					Preview
-				</Button>
+				</MDButton>
+				{/* <Button variant='contained' onClick={() => { actionButton() }} sx={{ background: colorsTheme.primary.main }}>
+					Preview
+				</Button> */}
 			</Grid>
 		</MDBox >
 	)

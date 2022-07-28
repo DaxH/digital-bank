@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CircularProgress, Grid, Typography } from '@mui/material'
+import { CircularProgress, Grid, InputAdornment, TextField, Typography } from '@mui/material'
 import { BaseLayout } from '../../components/BaseLayout'
 import { Card } from '../../components/Elements/Card'
 import { ModalDialog } from '../../components/Modals/ModalDialog'
@@ -10,6 +10,7 @@ import { helpFunctions } from '../../helpers/helpFunctions'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateConfigAction } from '../../redux/actions/theme'
 import { useNavigate } from 'react-router-dom'
+import { Search } from '@mui/icons-material'
 
 export const SelectTheme = () => {
 	const { fetchRequest } = helpFunctions()
@@ -21,7 +22,7 @@ export const SelectTheme = () => {
 	const navigate = useNavigate()
 	const themes = [
 		{
-			name: 'Tema 1',
+			name: 'ELODY',
 			imgMain: '/assets/images/theme/theme_1_1.png',
 			colors: { primary: '#499d24', secondary: '#e8fcea' },
 			previewImages: [
@@ -32,7 +33,7 @@ export const SelectTheme = () => {
 			]
 		},
 		{
-			name: 'Tema 2',
+			name: 'SIKKA',
 			imgMain: '/assets/images/theme/theme_2_1.png',
 			colors: { primary: '#499d24', secondary: '#e8fcea' },
 			previewImages: [
@@ -108,9 +109,24 @@ export const SelectTheme = () => {
 					dividers={true}
 				/>
 				<Grid container direction="column" height="100%" rowSpacing={1}>
-					<Grid item>
+					<Grid item marginTop={1}>
+						<TextField
+							autoComplete={'off'}
+							size='small'
+							InputProps={{
+								endAdornment: (
+									<InputAdornment position="start">
+										<Search />
+									</InputAdornment>
+								),
+							}}
+
+							placeholder='Buscar temas'
+							color='primary' />
+					</Grid>
+					<Grid item marginTop={1}>
 						<Typography color={'black'} variant={'d4'}>
-							Temas
+							Selecciona un tema para tu banca virtual
 						</Typography>
 					</Grid>
 					<Grid item xs={3.5}>

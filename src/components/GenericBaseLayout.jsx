@@ -12,7 +12,7 @@ const GenericBaseLayout = ({ children }) => {
             width={'100%'}
             display='flex'
             flexDirection='column'
-            className={'backgroundAbs'}
+            // className={'backgroundAbs'}
             sx={({ breakpoints, transitions }) => ({
                 position: "relative",
                 [breakpoints.up("xl")]: {

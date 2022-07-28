@@ -217,7 +217,7 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                         <Grid item xs={8} md={4}>
                             <MDButton
                                 variant='contained'
-                                color='secondary'
+                                color='templatePrimary'
                                 size='small'
                                 form='form-dataIFI'
                                 type='submit'
@@ -232,7 +232,7 @@ const InitailDataConfig = ({ sendDataFunction }) => {
                         <Grid item xs={8} md={4}>
                             <MDButton
                                 variant='outlined'
-                                color='secondary'
+                                color='templatePrimary'
                                 size='small'
                                 fontWeight={'bold'}
                                 fontSize={'20px'}

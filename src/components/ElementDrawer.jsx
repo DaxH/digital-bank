@@ -7,7 +7,7 @@ import MDBox from './MDBox';
 export const ElementDrawer = () => {
 	const { openDrawer, setOpenDrawer } = useContextLayout()
 	const optionsDrawer = [
-		{ label: 'Seleccionar tema', icon: <HomeOutlined color={'black'} sx={{ fontSize: '2rem' }} /> },
+		{ label: 'Seleccionar tema', icon: <HomeOutlined color={'white'} sx={{ fontSize: '2rem' }} /> },
 	]
 
 	return (
@@ -29,13 +29,22 @@ export const ElementDrawer = () => {
 					<Grid container height={'100%'} direction='column' rowSpacing={2}>
 						<Grid item flexGrow={1}>
 							<Grid container justifyContent={'center'}>
-								<img src={openDrawer ? '/assets/images/stike-logotipo.png' : '/assets/images/stike-logo.png'} width="100%"/>
+								<img src={openDrawer ? '/assets/images/stike-logotipo.png' : '/assets/images/stike-logo.png'} width="100%" />
 								{
 									openDrawer
 										?
 										optionsDrawer.map((option, index) =>
-											<Grid container justifyContent='center' columnSpacing={2} key={index}>
-												<Button variant="contained" startIcon={option.icon} color='white'>
+											<Grid container justifyContent='center' columnSpacing={2} key={index} marginTop={'5%'}>
+												<Button
+													variant="contained"
+													startIcon={option.icon}
+													sx={{
+														color: '#ffff',
+														backgroundColor: '#499d24',
+														padding: '0 8px',
+														'&:hover': { backgroundColor: '#499d24 !important' },
+														'&:focus:not(:hover)': { backgroundColor: '#499d24 !important' }
+													}}>
 													{option.label}
 												</Button>
 											</Grid>

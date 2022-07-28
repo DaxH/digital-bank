@@ -123,11 +123,11 @@ export const Login = () => {
 
 						}}>
 						<Grid item margin={'auto'}>
-							<Grid container columnSpacing={4} justifyContent={'center'} alignItems={'center'}>
-								<Grid item>
+							<Grid container columnSpacing={2} justifyContent={'center'} alignItems={'center'}>
+								<Grid item xs={5}>
 									<Typography variant='d1' color='white.main'>Bienvenido a</Typography>
 								</Grid>
-								<Grid item>
+								<Grid item xs={4}>
 									{
 										data.length > 0
 										&&
@@ -136,7 +136,9 @@ export const Login = () => {
 
 								</Grid>
 							</Grid>
-							<Typography variant='body1' color='white.main'>Inicia sesión para acceder a tu cuenta</Typography>
+							<Grid item>
+								<Typography variant='body1' color='white.main'>Inicia sesión para acceder a tu cuenta</Typography>
+							</Grid>
 						</Grid>
 					</MDBox>
 				</Grid>
