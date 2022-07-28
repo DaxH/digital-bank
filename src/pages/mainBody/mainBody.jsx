@@ -218,7 +218,7 @@ export const MainBody = () => {
         <Grid container justifyContent={"center"} alignItems={"center"}>
           <Grid item xs={5}>
             <Typography
-              variant="h1"
+              variant="h2"
               sx={{ color: colors.dark.main }}
               textAlign={"center"}
               margin={"auto"}
